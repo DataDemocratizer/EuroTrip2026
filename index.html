@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EuroTrip 2026 Countdown</title>
+  <style>
+    :root {
+      --navy: #12304A;
+      --blue: #2E6F9E;
+      --cream: #FFF7EA;
+      --gold: #D9A441;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.95), transparent 28%),
+        linear-gradient(135deg, #dbefff 0%, #fff7ea 55%, #f8dca7 100%);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow-x: hidden;
+    }
+
+    .passport-stamp {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      border: 3px solid rgba(18,48,74,.25);
+      color: rgba(18,48,74,.38);
+      border-radius: 50%;
+      width: 145px;
+      height: 145px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transform: rotate(12deg);
+      font-weight: bold;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      font-size: 17px;
+    }
+
+    .card {
+      width: min(980px, 100%);
+      border-radius: 34px;
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 30px 80px rgba(18,48,74,.22);
+      padding: clamp(28px, 5vw, 58px);
+      text-align: center;
+      border: 1px solid rgba(255,255,255,.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .plane {
+      position: absolute;
+      top: 28px;
+      left: -90px;
+      font-size: 44px;
+      animation: fly 9s linear infinite;
+    }
+
+    @keyframes fly {
+      0% { transform: translateX(-90px) translateY(8px) rotate(8deg); opacity: .2; }
+      10% { opacity: 1; }
+      50% { transform: translateX(520px) translateY(-8px) rotate(8deg); opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateX(1120px) translateY(10px) rotate(8deg); opacity: .2; }
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 7vw, 76px);
+      line-height: .98;
+      color: var(--navy);
+    }
+
+    .subtitle {
+      margin: 22px auto 8px;
+      font-family: Arial, sans-serif;
+      font-size: clamp(18px, 2.5vw, 24px);
+      max-width: 760px;
+      line-height: 1.45;
+    }
+
+    .takeoff {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: var(--white);
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .countdown {
+      margin: 44px auto 36px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(12px, 2vw, 22px);
+    }
+
+    .timebox {
+      background: var(--cream);
+      border: 2px solid rgba(217,164,65,.42);
+      border-radius: 24px;
+      padding: clamp(18px, 3vw, 30px) 10px;
+      box-shadow: 0 12px 26px rgba(18,48,74,.08);
+    }
+
+    .num {
+      font-family: Arial, sans-serif;
+      font-size: clamp(38px, 7vw, 76px);
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .label {
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .route {
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .route span {
+      background: rgba(46,111,158,.10);
+      border: 1px solid rgba(46,111,158,.22);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .footer {
+      margin-top: 34px;
+      font-family: Arial, sans-serif;
+      color: rgba(18,48,74,.78);
+      font-size: 16px;
+    }
+
+    .sparkle {
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+      .countdown { grid-template-columns: repeat(2, 1fr); }
+      .passport-stamp {
+        width: 94px;
+        height: 94px;
+        font-size: 12px;
+        top: 10px;
+        right: 10px;
+      }
+      .plane { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="passport-stamp">FAMILY<br>EUROTRIP<br>2026</div>
+
+  <main class="card">
+    <div class="plane">✈️</div>
+
+    <div class="eyebrow">The countdown is officially on</div>
+    <h1>EuroTrip 2026</h1>
+
+    <p class="subtitle">
+      Counting down to takeoff for Paris, Disney magic, Italy adventures, pasta, gelato,
+      beaches, gondolas, and family memories. 🇫🇷🏰🇮🇹
+    </p>
+
+    <div class="takeoff">Takeoff Day: July 14, 2026</div>
+
+    <section class="countdown" aria-label="Countdown timer">
+      <div class="timebox">
+        <div class="num" id="days">0</div>
+        <div class="label">Days</div>
+      </div>
+      <div class="timebox">
+        <div class="num" id="hours">0</div>
+        <div class="label">Hours</div>
+      </div>
+      <div class="timebox">
+        <div class="num" id="minutes">0</div>
+        <div class="label">Minutes</div>
+      </div>
+      <div class="timebox">
+        <div class="num" id="seconds">0</div>
+        <div class="label">Seconds</div>
+      </div>
+    </section>
+
+    <div class="route">
+      <span>🇫🇷 Paris</span>
+      <span>🏰 Disney</span>
+      <span>🚤 Venice</span>
+      <span>🍷 Florence/Tuscany</span>
+      <span>🏖️ Coastal Italy</span>
+      <span>🏛️ Rome</span>
+    </div>
+
+    <div class="footer">
+      <span class="sparkle">✨</span> The Delgadillo Family • Tía Tita • Tía Norma • Lucas • Isabela <span class="sparkle">✨</span>
+    </div>
+  </main>
+
+  <script>
+    // Countdown target: July 14, 2026 at 12:00 AM Pacific Time.
+    // Change the time below if you want it to match the actual flight departure.
+    const target = new Date("2026-07-14T00:00:00-07:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = target - now;
+
+      if (distance <= 0) {
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
+        document.querySelector(".subtitle").textContent = "It’s takeoff day! Paris, here we come! 🇫🇷✈️";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
